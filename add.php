@@ -17,7 +17,7 @@ $name = rand_string( 6 );
 mkdir($name);
 $ourFileHandle = fopen($name.'/index.html', 'x') or die("can't open file");
 }
-if(fwrite($ourFileHandle,'<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=$url"></head><html>')){
+if(fwrite($ourFileHandle,'<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url='.$url.'"></head><html>')){
 echo "{ action: 'shorten', status: 'success', url: '//msurl.tk/$name', total: '".(count(glob($_SERVER['DOCUMENT_ROOT'].'/*'))-3)."', message: '' }";
 }
 fclose($ourFileHandle);
